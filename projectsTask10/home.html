@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced FullPage Sliding Website</title>
+    
+    <!-- FullPage.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        .section {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 10px;
+            box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #ff4081;
+            width: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section" style="background-image: url('/images/marita-kavelashvili-ugnrXk1129g-unsplash.jpg');">
+            <div class="content">
+                <h1>Welcome to Our Website Nature Explore</h1>
+                <p>Experience a peaceful and amazing journey.</p>
+                <div class="card" data-aos="fade-up">
+                    <h2> Nature’s Beauty</h2>
+                    <p>     "Step into the serenity of nature, where every leaf tells a story, and every breeze carries a secret. Discover the untouched beauty of the wild."     .</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background-image: url('/images/andy-ramos-kr9HOdBFjuk-unsplash.jpg');">
+            <div class="content">
+                <h1>About Section</h1>
+                <p>Embracing the Wonders of Nature
+                    "Our mission is to inspire a deep connection with the natural world. From lush forests to majestic mountains, we celebrate the breathtaking landscapes that make our planet extraordinary."  </p>
+                <div class="card" data-aos="fade-up">
+                    <h2>Leading Technology</h2>
+                    <p>We use modern technologies to enhance your experience.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background-image: url('/images/john-towner-3Kv48NS4WUU-unsplash.jpg');">
+            <div class="content">
+                <h1>Nature’s Whisper: Stories from the Wild</h1>
+                <div class="testimonial-slider">
+                    <div class="testimonial">"Read fascinating tales about the wonders of nature, eco-friendly living, and conservation efforts."</div>
+                    <div class="testimonial">"Dive into the world of adventure, sustainability, and discovery."</div>
+                    <div class="testimonial">"A next-level website experience."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            navigationPosition: 'right',
+        });
+
+        AOS.init();
+
+        $('.testimonial-slider').slick({
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false
+        });
+    </script>
+</body>
+</html>
